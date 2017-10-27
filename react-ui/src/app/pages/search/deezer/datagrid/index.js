@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
-import { DataTypeProvider, EditingState } from '@devexpress/dx-react-grid';
+import { DataTypeProvider, TableColumnResizing } from '@devexpress/dx-react-grid';
 import { Grid, TableView, TableHeaderRow } from '@devexpress/dx-react-grid-bootstrap3';
 import './index.css';
 
 const BooleanTypeProvider = () => (
     <DataTypeProvider
-      type="boolean"
-      formatterTemplate={({ value }) =>
-        <span className="label label-default">{value ? 'Disponible' : 'Indisponible'}</span>}
-      editorTemplate={({ value, onValueChange }) => (
-        <select
-          className="form-control"
-          value={value}
-          onChange={e => onValueChange(e.target.value === 'true')}
-        >
-          <option value={false}>Indisponible</option>
-          <option value>Disponible</option>
-        </select>
-      )}
+        type="boolean"
+        formatterTemplate={({ value }) =>
+            <span className="label label-default">{value ? 'Disponible' : 'Indisponible'}</span>}
+            editorTemplate={({ value, onValueChange }) => (
+            <select
+                className="form-control"
+                value={value}
+                onChange={e => onValueChange(e.target.value === 'true')}
+            >
+                <option value={false}>Indisponible</option>
+                <option value>Disponible</option>
+            </select>
+        )}
     />
   );
 
@@ -34,7 +34,7 @@ class DataGrid extends Component {
             columns: [
                 { name: 'title', title: 'Titre' },
                 { name: 'artist', title: 'Artiste' },
-                { name: 'album_name', title: 'Nom de l\'album' },
+                { name: 'album_name', title: 'Album' },
                 { name: 'deezer_link', title: 'Deezer' },
                 { name: 'extract', title: 'Extrait' },
                 { name: 'lyrics', title: 'Lyrics', dataType: 'boolean'},
@@ -43,7 +43,23 @@ class DataGrid extends Component {
                 { name: 'album_playlist', title: 'Album' },
                 { name: 'album_cover', title: 'Album Cover' }
             ],
-            rows: []
+            rows: [],
+            columnWidths: {
+                title:          150,
+                artist:         120,
+                album_name:     150,
+                deezer_link:    150,
+                extract:        150,
+                lyrics:         100,
+                artist_cover:   150,
+                playlist:       150,
+                album_playlist: 150,
+                album_cover:    150
+            }
+        };
+
+        this.changeColumnWidths = (columnWidths) => {
+            this.setState({ columnWidths });
         };
     }
 
@@ -109,7 +125,7 @@ class DataGrid extends Component {
     }
 
     render() {
-        let { rows, columns } = this.state;
+        let { rows, columns, columnWidths } = this.state;
         return (
             <div id="deezer_search">
                 <input id="search-engine" type="text" 
@@ -122,7 +138,11 @@ class DataGrid extends Component {
                 >
                     <BooleanTypeProvider />
                     <TableView />
-                    <TableHeaderRow />
+                    <TableColumnResizing
+                        columnWidths={columnWidths}
+                        onColumnWidthsChange={this.changeColumnWidths}
+                    />
+                    <TableHeaderRow allowResizing />
                 </Grid>
             </div>
         )
