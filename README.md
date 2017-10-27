@@ -5,9 +5,21 @@ Deezer Data Grid By Jen
 
 ![alt text](https://github.com/jendigital/deezer-data-grid/blob/master/deezer_by_jen.png)
 
-## Launch Server
+## Heroku App
+
+http://deezerdg-byjen.herokuapp.com/
+
+## Launch React Front
+
+* cd react-ui then yarn then yarn start
+* see result on http://localhost:3000
+* cd react-ui then yarn test to launch jest test
+* create-react-app-sass project
+
+## Launch Server (Optionnal on localhost Indispensable for Heroku)
 
 * yarn then yarn start
+* see result on http://localhost:5000
 
 ### Main Functionality
 
