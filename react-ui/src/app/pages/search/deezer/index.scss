@@ -1,0 +1,23 @@
+$screen-sm-min:     768px;
+$dark-gold:         #FFD700;
+
+#deezer_search {
+    #search-engine{
+        width: 100vw;
+        height: 50px;
+        border: $dark-gold 1px solid;
+        padding-left: 20px;
+
+        &::placeholder {
+            padding-left: 10px;
+        }
+
+        &:focus {
+            border-color: $dark-gold;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px $dark-gold;
+            box-shadow: inset 0 1px 1px $dark-gold;
+          
+        }
+    }
+}

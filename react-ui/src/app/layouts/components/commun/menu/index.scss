@@ -1,0 +1,11 @@
+$dark-gold:         #FFD700;
+$screen-md-min:     992px;
+
+#header {
+    height: 100px;
+    background-color: $dark-gold;
+
+    #logo_container {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,12 @@
+#deezer_search #search-engine {
+  width: 100vw;
+  height: 50px;
+  border: #FFD700 1px solid;
+  padding-left: 20px; }
+  #deezer_search #search-engine::placeholder {
+    padding-left: 10px; }
+  #deezer_search #search-engine:focus {
+    border-color: #FFD700;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px #FFD700;
+    box-shadow: inset 0 1px 1px #FFD700; }
