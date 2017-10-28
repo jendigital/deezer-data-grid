@@ -153,7 +153,7 @@ class DataGrid extends Component {
                     <FilteringState defaultFilters={[]} />
                     <LocalFiltering />
                     <SortingState 
-                        sorting={this.state.sorting} 
+                        sorting={sorting} 
                         onSortingChange={this.changeSorting} 
                     />
                     <LocalSorting />
