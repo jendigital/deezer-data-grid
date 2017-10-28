@@ -6,7 +6,7 @@ class Menu extends Component {
     render() {
         return (
             <div id='header'>
-                <a href='/'>
+                <a href='https://github.com/jendigital/deezer-data-grid' target='_blank'>
                     <div id='logo_container'>
                         <img className='logo' alt='Deezer' src='https://storage.googleapis.com/deezer-data-grid/Deezer_logo.png' />
                     </div>
