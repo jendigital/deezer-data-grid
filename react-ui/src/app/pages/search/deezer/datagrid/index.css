@@ -1,0 +1,29 @@
+#deezer_search #filter {
+  position: relative;
+  top: 55px;
+  height: 0; }
+
+#deezer_search #filter, #deezer_search #hideFilter {
+  text-align: center;
+  z-index: 1; }
+  #deezer_search #filter a, #deezer_search #hideFilter a {
+    color: #D4AF37; }
+    #deezer_search #filter a .fa, #deezer_search #hideFilter a .fa {
+      color: #FFD700; }
+  #deezer_search #filter a:hover, #deezer_search #hideFilter a:hover {
+    color: #FFD700;
+    text-decoration: none; }
+    #deezer_search #filter a:hover .fa, #deezer_search #hideFilter a:hover .fa {
+      color: #D4AF37; }
+
+#deezer_search.hide_filter thead tr:nth-child(2) {
+  display: none !important; }
+
+#deezer_search.show_filter thead tr:nth-child(2),
+#deezer_search.hide_filter #filter,
+#deezer_search.show_filter #hideFilter {
+  display: block; }
+
+#deezer_search.show_filter #filter,
+#deezer_search.hide_filter #hideFilter {
+  display: none; }

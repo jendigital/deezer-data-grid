@@ -1,1 +1,47 @@
-   
+$dark-gold: #D4AF37;
+$light-gold: #FFD700;
+
+#deezer_search {
+    #filter {
+        position: relative;
+        top: 55px;
+        height: 0;
+    }
+
+    #filter, #hideFilter {
+        text-align: center;
+        z-index: 1;
+
+        a {
+            color: $dark-gold;
+
+            .fa {
+                color: $light-gold;
+            }
+        }
+
+        a:hover {
+            color: $light-gold;
+            text-decoration: none;
+
+            .fa {
+                color: $dark-gold;
+            }
+        }
+    }
+
+    &.hide_filter thead tr:nth-child(2) {
+        display: none !important;
+    }
+
+    &.show_filter thead tr:nth-child(2),
+    &.hide_filter #filter,
+    &.show_filter #hideFilter  {
+        display: block;
+    }
+
+    &.show_filter #filter,
+    &.hide_filter #hideFilter {
+        display: none;
+    }
+}
