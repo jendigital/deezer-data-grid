@@ -14,9 +14,11 @@ import {
     TableView, 
     TableHeaderRow, 
     TableFilterRow,
-    TableRowDetail,
     VirtualTableView
 } from '@devexpress/dx-react-grid-bootstrap3';
+import $ from 'jquery';
+import { Icon } from 'react-fa';
+import { FormattedMessage } from 'react-intl';
 import './index.css';
 
 const BooleanTypeProvider = () => (
@@ -141,19 +143,41 @@ class DataGrid extends Component {
         return this.tracks;
     }
 
+    displayFilter() {
+        $('#deezer_search').removeClass('hide_filter');
+        $('#deezer_search').addClass('show_filter');
+    }
+
+    hideFilter() {
+        $('#deezer_search').removeClass('show_filter');
+        $('#deezer_search').addClass('hide_filter');
+    }
+
     render() {
         let { rows, columns, columnWidths, sorting } = this.state;
         return (
-            <div id="deezer_search">
+            <div id="deezer_search" className='hide_filter'>
                 <input id="search-engine" type="text" 
                     placeholder="Rechercher une musique, un album, un artiste..." 
                     onChange={this.search}
                 />
+                <div id='filter'>
+                    <a onClick={this.displayFilter}>
+                        <FormattedMessage id="deezer.filter" /> 
+                        <Icon name='chevron-up' />
+                    </a>
+                </div>
+                <div id='hideFilter'>
+                    <a onClick={this.hideFilter}>
+                        <FormattedMessage id="deezer.hideFilter" /> 
+                        <Icon name='chevron-down' />
+                    </a>
+                </div>
                 <Grid
                     rows={rows}
                     columns={columns}
                 >
-                    <FilteringState defaultFilters={[]} />
+                    <FilteringState defaultFilters={[]}/>
                     <SortingState 
                         sorting={sorting} 
                         onSortingChange={this.changeSorting} 
@@ -162,6 +186,7 @@ class DataGrid extends Component {
 
                     <LocalFiltering />
                     <LocalSorting />
+                    
 
                     <BooleanTypeProvider />
                     <TableView />
@@ -171,7 +196,7 @@ class DataGrid extends Component {
                         onColumnWidthsChange={this.changeColumnWidths}
                     />
                     <TableHeaderRow allowResizing allowSorting />
-                    <TableFilterRow rowHeight={50} />
+                    <TableFilterRow rowHeight={50}  />
                 </Grid>
             </div>
         )
