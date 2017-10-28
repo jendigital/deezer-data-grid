@@ -24,11 +24,11 @@ const BooleanTypeProvider = () => (
             editorTemplate={({ value, onValueChange }) => (
             <select
                 className="form-control"
-                value={value}
+                value={value || false}
                 onChange={e => onValueChange(e.target.value === 'true')}
             >
                 <option value={false}>Indisponible</option>
-                <option value>Disponible</option>
+                <option value={true}>Disponible</option>
             </select>
         )}
     />
