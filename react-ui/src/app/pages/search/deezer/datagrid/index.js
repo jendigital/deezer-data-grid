@@ -6,13 +6,16 @@ import {
     DataTypeProvider, 
     TableColumnResizing,
     FilteringState,
-    LocalFiltering
+    LocalFiltering,
+    RowDetailState
 } from '@devexpress/dx-react-grid';
 import { 
     Grid, 
     TableView, 
     TableHeaderRow, 
-    TableFilterRow 
+    TableFilterRow,
+    TableRowDetail,
+    VirtualTableView
 } from '@devexpress/dx-react-grid-bootstrap3';
 import './index.css';
 
@@ -151,20 +154,24 @@ class DataGrid extends Component {
                     columns={columns}
                 >
                     <FilteringState defaultFilters={[]} />
-                    <LocalFiltering />
                     <SortingState 
                         sorting={sorting} 
                         onSortingChange={this.changeSorting} 
                     />
+                    <RowDetailState />
+
+                    <LocalFiltering />
                     <LocalSorting />
+
                     <BooleanTypeProvider />
                     <TableView />
+                    <VirtualTableView />
                     <TableColumnResizing
                         columnWidths={columnWidths}
                         onColumnWidthsChange={this.changeColumnWidths}
                     />
                     <TableHeaderRow allowResizing allowSorting />
-                    <TableFilterRow />
+                    <TableFilterRow rowHeight={50} />
                 </Grid>
             </div>
         )
