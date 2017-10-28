@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
-import { DataTypeProvider, TableColumnResizing } from '@devexpress/dx-react-grid';
-import { Grid, TableView, TableHeaderRow } from '@devexpress/dx-react-grid-bootstrap3';
+import { 
+    SortingState, 
+    LocalSorting,
+    DataTypeProvider, 
+    TableColumnResizing,
+    FilteringState,
+    LocalFiltering
+} from '@devexpress/dx-react-grid';
+import { 
+    Grid, 
+    TableView, 
+    TableHeaderRow, 
+    TableFilterRow 
+} from '@devexpress/dx-react-grid-bootstrap3';
 import './index.css';
 
 const BooleanTypeProvider = () => (
@@ -44,6 +56,7 @@ class DataGrid extends Component {
                 { name: 'album_cover', title: 'Album Cover' }
             ],
             rows: [],
+            sorting: [{ columnName: 'title', direction: 'asc' }],
             columnWidths: {
                 title:          150,
                 artist:         120,
@@ -58,6 +71,7 @@ class DataGrid extends Component {
             }
         };
 
+        this.changeSorting = sorting => this.setState({ sorting });
         this.changeColumnWidths = (columnWidths) => {
             this.setState({ columnWidths });
         };
@@ -125,7 +139,7 @@ class DataGrid extends Component {
     }
 
     render() {
-        let { rows, columns, columnWidths } = this.state;
+        let { rows, columns, columnWidths, sorting } = this.state;
         return (
             <div id="deezer_search">
                 <input id="search-engine" type="text" 
@@ -136,13 +150,21 @@ class DataGrid extends Component {
                     rows={rows}
                     columns={columns}
                 >
+                    <FilteringState defaultFilters={[]} />
+                    <LocalFiltering />
+                    <SortingState 
+                        sorting={this.state.sorting} 
+                        onSortingChange={this.changeSorting} 
+                    />
+                    <LocalSorting />
                     <BooleanTypeProvider />
                     <TableView />
                     <TableColumnResizing
                         columnWidths={columnWidths}
                         onColumnWidthsChange={this.changeColumnWidths}
                     />
-                    <TableHeaderRow allowResizing />
+                    <TableHeaderRow allowResizing allowSorting />
+                    <TableFilterRow />
                 </Grid>
             </div>
         )
