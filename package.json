@@ -15,7 +15,8 @@
   ],
   "dependencies": {
     "express": "^4.14.1",
-    "http-auth": "^3.2.3"
+    "http-auth": "^3.2.3",
+    "react-test-renderer": "^16.0.0"
   },
   "repository": {
     "type": "git",

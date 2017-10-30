@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
-import { SortingState, LocalSorting, DataTypeProvider, TableColumnResizing,
+import { SortingState, LocalSorting, TableColumnResizing,
     FilteringState, LocalFiltering, RowDetailState } from '@devexpress/dx-react-grid';
 import { Grid, TableView, TableHeaderRow, TableFilterRow, VirtualTableView
 } from '@devexpress/dx-react-grid-bootstrap3';
