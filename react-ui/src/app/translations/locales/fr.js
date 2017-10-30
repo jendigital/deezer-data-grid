@@ -3,7 +3,7 @@ const messages = {
   "noMatch.UnderConstruction": "Cette fonctionnalité du site est en cours de construction.",
   
   "deezer.filter": "Filtrer vos chansons ",
-  "deezer.hideFilter": "Cacher les filtres "
+  "deezer.hideFilter": "Filtres "
 };
 
 export default messages;

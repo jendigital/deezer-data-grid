@@ -5,7 +5,8 @@
 
 #deezer_search #filter, #deezer_search #hideFilter {
   text-align: center;
-  z-index: 1; }
+  z-index: 1;
+  background-color: white; }
   #deezer_search #filter a, #deezer_search #hideFilter a {
     color: #D4AF37; }
     #deezer_search #filter a .fa, #deezer_search #hideFilter a .fa {
@@ -27,3 +28,30 @@
 #deezer_search.show_filter #filter,
 #deezer_search.hide_filter #hideFilter {
   display: none; }
+
+#deezer_search .text-primary {
+  color: #D4AF37; }
+
+#deezer_search.hide_filter table th {
+  border-top: 1px solid #D4AF37;
+  border-bottom: 1px solid #D4AF37; }
+
+#deezer_search.show_filter table th {
+  border-top: 0.5px solid #FFD700;
+  border-bottom: 0.5px solid #FFD700; }
+
+#deezer_search .panel {
+  margin-bottom: 0; }
+
+#deezer_search table td {
+  border-top: 1px solid #FFD700;
+  display: flex !important; }
+  #deezer_search table td a {
+    margin: auto; }
+
+#deezer_search .label-default {
+  background-color: transparent;
+  color: #D4AF37; }
+
+#deezer_search .text-muted {
+  margin: auto; }

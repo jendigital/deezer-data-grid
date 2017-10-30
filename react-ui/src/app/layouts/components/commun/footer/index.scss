@@ -1,0 +1,53 @@
+$dark-gold:         #FFD700;
+$beige:             #f5f5dc;
+$screen-md-min:     992px;
+
+#footer {
+    background-color: $dark-gold;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    #info, .illustration {
+        margin-top: 10px;
+    }
+
+    #info {
+        display: flex;
+        margin-bottom: 20px;
+
+        a {
+            color: black;
+
+            h5 {
+                margin-left: 20px;
+            }
+
+            &:hover {
+                color: $beige;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .illustration {
+        display: flex;
+
+        .first img {
+            margin-left: 0;
+        }
+
+        img {
+            margin-left: 20px;
+            height: 100px;
+            width: 150px;
+        }
+    }
+
+    .margin-left {
+        margin-left: auto;
+    }
+
+    .margin-right {
+        margin-right: auto;
+    }
+}

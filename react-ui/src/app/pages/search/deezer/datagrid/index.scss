@@ -11,6 +11,7 @@ $light-gold: #FFD700;
     #filter, #hideFilter {
         text-align: center;
         z-index: 1;
+        background-color: white;
 
         a {
             color: $dark-gold;
@@ -43,5 +44,44 @@ $light-gold: #FFD700;
     &.show_filter #filter,
     &.hide_filter #hideFilter {
         display: none;
+    }
+
+    .text-primary {
+        color: $dark-gold;
+    }
+
+    &.hide_filter table th {
+        border-top: 1px solid $dark-gold;
+        border-bottom: 1px solid $dark-gold;
+    }
+
+    &.show_filter table th {
+        border-top: 0.5px solid $light-gold;
+        border-bottom: 0.5px solid $light-gold;
+    }
+
+    .panel {
+        margin-bottom: 0;
+    }
+
+    table {
+
+        td {
+            border-top: 1px solid $light-gold;
+            display: flex !important;
+            
+            a {
+                margin: auto;
+            }
+        }
+    }
+
+    .label-default {
+        background-color: transparent;
+        color: $dark-gold;
+    }
+
+    .text-muted {
+        margin: auto;
     }
 }
