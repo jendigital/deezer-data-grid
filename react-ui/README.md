@@ -40,3 +40,8 @@ http://deezerdg-byjen.herokuapp.com/
 * Chrome, Firefox, IE9 compatibility
 * Add Unit tests
 * API https://developers.deezer.com/api
+
+## Cross-Browser
+
+* IE marche en local mais ne fonctionne pas sur le serveur Heroku App, en effet, les fichiers minifiers ne permettent pas à IE d'interpreter les Symbol Object, il faudrait rajouter un patch pour Symbol Object malgré le fait qu'ils sont interprétés: https://docs.microsoft.com/fr-fr/scripting/javascript/reference/symbol-object-javascript
+Mais sur d'autres serveur de production, le projet pourrait marcher sur IE.

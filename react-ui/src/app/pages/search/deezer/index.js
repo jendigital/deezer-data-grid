@@ -6,14 +6,12 @@ import './index.css';
 class DeezerSearch extends Component {
     constructor(props) {
         super(props);
-        
-        this.songs          = false;
     }
 
     render() {
         return (
             <MainLayout>
-                <DataGrid Songs={this.songs} />
+                <DataGrid />
             </ MainLayout>
         )
     }
