@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MainLayout from '../../../layouts/default';
-import DataGrid from './datagrid';
+import DataGrid from './components/datagrid';
 import './index.css';
 
 class DeezerSearch extends Component {
