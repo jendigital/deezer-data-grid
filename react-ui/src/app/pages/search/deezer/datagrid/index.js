@@ -37,7 +37,53 @@ const BooleanTypeProvider = () => (
             </select>
         )}
     />
-  );
+);
+
+const ImgTypeProvider = () => (
+    <DataTypeProvider
+        type="img"
+        formatterTemplate={({ value }) =>
+            <a href={ value } target='_blank' rel="noopener noreferrer">
+                <img alt='Cover' width='25' height='25' src={value} />
+            </a>
+        }
+    />
+);
+
+const DeezerTypeProvider = () => (
+    <DataTypeProvider
+        type="deezer"
+        formatterTemplate={({ value }) =>
+            <a href={ value } target='_blank' rel="noopener noreferrer">
+                <img alt='Deezer' width='50' height='25' src='https://storage.googleapis.com/deezer-data-grid/Deezer_logo.png' />
+            </a>
+        }
+    />
+);
+
+const PlayerTypeProvider = () => (
+    <DataTypeProvider
+        type="player"
+        formatterTemplate={({ value }) =>
+            <a href={ value } target='_blank' rel="noopener noreferrer">
+                <audio controls>
+                    <source type='audio/mp3' src={ value } />
+                </audio>
+            </a>
+        }
+    />
+);
+
+const ApiTypeProvider = () => (
+    <DataTypeProvider
+        type="api"
+        formatterTemplate={({ value }) =>
+            <a href={ value } target='_blank' rel="noopener noreferrer">
+                <img alt='Deezer' width='120' height='25' src='https://storage.googleapis.com/deezer-data-grid/Footer/deeser_developer.png' />
+            </a>
+        }
+    />
+);
 
 class DataGrid extends Component {
     constructor(props) {
@@ -52,13 +98,13 @@ class DataGrid extends Component {
                 { name: 'title', title: 'Titre' },
                 { name: 'artist', title: 'Artiste' },
                 { name: 'album_name', title: 'Album' },
-                { name: 'deezer_link', title: 'Deezer' },
-                { name: 'extract', title: 'Extrait' },
+                { name: 'deezer_link', title: 'Deezer', dataType: 'deezer' },
+                { name: 'extract', title: 'Extrait', dataType: 'player' },
                 { name: 'lyrics', title: 'Lyrics', dataType: 'boolean'},
-                { name: 'artist_cover', title: 'Artiste Cover' },
-                { name: 'playlist', title: 'Playlist de l\'artist' },
-                { name: 'album_playlist', title: 'Album' },
-                { name: 'album_cover', title: 'Album Cover' }
+                { name: 'artist_cover', title: 'Artiste Cover', dataType: 'img' },
+                { name: 'playlist', title: 'Playlist de l\'artist', dataType:'api' },
+                { name: 'album_playlist', title: 'Album', dataType:'api' },
+                { name: 'album_cover', title: 'Album Cover', dataType: 'img' }
             ],
             rows: [],
             sorting: [{ columnName: 'title', direction: 'asc' }],
@@ -189,6 +235,11 @@ class DataGrid extends Component {
                     
 
                     <BooleanTypeProvider />
+                    <ImgTypeProvider />
+                    <DeezerTypeProvider />
+                    <PlayerTypeProvider />
+                    <ApiTypeProvider />
+
                     <TableView />
                     <VirtualTableView />
                     <TableColumnResizing

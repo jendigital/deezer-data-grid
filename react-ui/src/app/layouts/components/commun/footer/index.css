@@ -1,0 +1,28 @@
+#footer {
+  background-color: #FFD700;
+  padding-top: 20px;
+  padding-bottom: 30px; }
+  #footer #info, #footer .illustration {
+    margin-top: 10px; }
+  #footer #info {
+    display: flex;
+    margin-bottom: 20px; }
+    #footer #info a {
+      color: black; }
+      #footer #info a h5 {
+        margin-left: 20px; }
+      #footer #info a:hover {
+        color: #f5f5dc;
+        text-decoration: none; }
+  #footer .illustration {
+    display: flex; }
+    #footer .illustration .first img {
+      margin-left: 0; }
+    #footer .illustration img {
+      margin-left: 20px;
+      height: 100px;
+      width: 150px; }
+  #footer .margin-left {
+    margin-left: auto; }
+  #footer .margin-right {
+    margin-right: auto; }
